@@ -18,7 +18,7 @@ const Products = ({match}) => {
     const [rating,setRating]=useState(0);
 
 
-    const {loading,error,products,productsCount,resultPerPage,filteredProductsCount}=useSelector((state)=>state.products);
+    const {loading,error,products,resultPerPage,filteredProductsCount}=useSelector((state)=>state.products);
     const alert=useAlert();
 
 
