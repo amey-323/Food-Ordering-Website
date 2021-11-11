@@ -1,6 +1,6 @@
 import {React,Fragment,useRef,useState,useEffect} from 'react';
 import './LoginSignUp.css';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Loader from '../layout/Loader/Loader'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
@@ -9,10 +9,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {clearErrors, login, register} from "../../actions/userAction";
 import {useAlert} from "react-alert";
 
-const LoginSignUp = (history) => {
+const LoginSignUp = (history, location) => {
     const dispatch=useDispatch();
     const alert=useAlert();
-
     const {error, loading, isAuthenticated}=useSelector((state)=>state.user);
     const loginTab=useRef(null);
     const registerTab=useRef(null);
@@ -58,15 +57,16 @@ const LoginSignUp = (history) => {
             setUser({...user,[e.target.name]:e.target.value});
         }
     }
+    const redirect = location.search ? location.search.split("=")[1] : "/account";
     useEffect(()=>{
         if(error){
             alert.error(error);
             dispatch(clearErrors());
         }
         if(isAuthenticated){
-            history.push("/account")
+            history.push(redirect);
         }
-    },[dispatch,error,history,alert,isAuthenticated]);
+    },[dispatch,error,history,alert,isAuthenticated, redirect]);
     const switchTabs=(e,tab)=>{
         if(tab==="login"){
             switcherTab.current.classList.add('shiftToNeutral');
