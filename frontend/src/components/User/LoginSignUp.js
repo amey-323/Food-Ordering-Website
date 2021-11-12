@@ -82,7 +82,7 @@ const LoginSignUp = ({history, location}) => {
             registerTab.current.classList.add('shiftToNeutralForm');
             loginTab.current.classList.add('shiftToLeft');
         }
-    }
+      }
     return (
         <Fragment>
       {loading ? (
