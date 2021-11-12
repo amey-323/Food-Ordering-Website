@@ -1,7 +1,8 @@
 class ApiFeatures {
-    constructor(query, queryStr) {
+    constructor(query, queryStr,filteredProductsCount) {
         this.query = query;
         this.queryStr = queryStr;
+        this.filteredProductsCount=filteredProductsCount;
     }
     search() {
         const keyword = this.queryStr.keyword ?
@@ -12,6 +13,7 @@ class ApiFeatures {
                 }
             } : {}
         this.query = this.query.find({ ...keyword });
+        this.filteredProductsCount=this.query.length;
         return this;
     }
     filter() {
@@ -26,6 +28,7 @@ class ApiFeatures {
         let queryStr = JSON.stringify(queryCopy);
         queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g, (key) => `$${key}`);
         this.query = this.query.find(JSON.parse(queryStr));
+        this.filteredProductsCount=this.query.length;
         return this;
     }
 

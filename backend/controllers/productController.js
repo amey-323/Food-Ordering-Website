@@ -14,26 +14,30 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 });
     
 // Get All Products
-exports.getAllProducts = catchAsyncErrors(async (req, res) => {
-    const resultPerPage = 5;
+exports.getAllProducts = catchAsyncErrors(async (req, res,next) => {
+    const resultPerPage = 8;
     const productCount =await Product.countDocuments();
-    const apifeature = new ApiFeatures(Product.find(), req.query)
+    let filteredProductsCount=await Product.countDocuments();
+    const apifeature = new ApiFeatures(Product.find(), req.query,filteredProductsCount)
         .search()
         .filter()
         .pagination(resultPerPage);
+    filteredProductsCount=await apifeature.filteredProductsCount;
     const displayAllProducts = await apifeature.query;
    
     // console.log(displayAllProducts);
-    if (displayAllProducts.length == 0) {
-        return res.status(200).json({
-            success: false,
-            message: "No Products Present"
-        });
-    }
+    // if (displayAllProducts.length == 0) {
+    //     return res.status(200).json({
+    //         success: false,
+    //         message: "No Products Present"
+    //     });
+    // }
     res.status(200).json({
         success: true,
         displayAllProducts,
-        productCount
+        productCount,
+        resultPerPage,
+        filteredProductsCount
     });
 });
 

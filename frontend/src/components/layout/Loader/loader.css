@@ -1,0 +1,22 @@
+.loading{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading > div{
+    height: 10vmax;
+    width: 10vmax;
+    border-radius: 50%;
+    border-bottom: 5px solid rgb(58, 54, 54);
+    animation: rotateLoader 1s linear infinite;
+}
+@keyframes rotateLoader{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
