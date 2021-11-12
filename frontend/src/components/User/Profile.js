@@ -24,6 +24,7 @@ const Profile = ({history}) => {
                     <Link to="/me/update"> Edit Profile</Link>
                 </div>
                 <div>
+                <div>
                     <h4>Full Name</h4>
                     <p>{user.name}</p>
                 </div>
@@ -38,6 +39,7 @@ const Profile = ({history}) => {
                 <div>
                     <Link to="/orders">My Orders</Link>
                     <Link to="password/update">Update Password</Link>
+                </div>
                 </div>
                 </div>
         </Fragment>
