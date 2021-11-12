@@ -22,6 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.10",
     "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.15",
     "validator": "^13.6.0"
   },
   "devDependencies": {
