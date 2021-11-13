@@ -13,6 +13,7 @@ import {
   UPDATE_PROFILE_REQUEST,
   UPDATE_PROFILE_SUCCESS,
   UPDATE_PROFILE_FAIL,
+
   UPDATE_PASSWORD_REQUEST,
   UPDATE_PASSWORD_SUCCESS,
   UPDATE_PASSWORD_FAIL,
@@ -22,6 +23,7 @@ import {
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAIL,
+
   CLEAR_ERRORS,
 } from "../constants/userConstants";
 
@@ -87,7 +89,10 @@ export const logout = () => async (dispatch) => {
     dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
   }
 };
-//Update Profile
+
+
+// Update Profile
+
 export const updateProfile = (userData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
@@ -104,6 +109,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     });
   }
 };
+
 //Update Password
 export const updatePassword = (password) => async (dispatch) => {
   try {
@@ -161,6 +167,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     });
   }
 };
+
 
 //Clearing Errors
 export const clearErrors = () => async (dispatch) => {

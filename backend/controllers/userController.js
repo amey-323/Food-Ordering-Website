@@ -164,6 +164,7 @@ exports.updateProfile=catchAsyncErrors(async(req,res,next)=>{
             public_id: myCloud.public_id,
             url: myCloud.secure_url,
         }
+
     }
 
     const user=await User.findByIdAndUpdate(req.user.id,newUserData,{

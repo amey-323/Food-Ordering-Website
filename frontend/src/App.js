@@ -15,11 +15,13 @@ import UserOptions from './components/layout/Header/UserOptions.js';
 import { useSelector} from 'react-redux';
 import Profile from './components/User/Profile';
 import ProtectedRoute from './components/Route/ProtectedRoute';
+
 import UpdateProfile from './components/User/UpdateProfile.js';
 import UpdatePassword from './components/User/UpdatePassword.js';
 import ForgotPassword from './components/User/ForgotPassword.js';
 import ResetPassword from './components/User/ResetPassword.js';
 import Cart from './components/Cart/Cart.js';
+
 function App() {
   const {isAuthenticated, user}=useSelector((state)=>state.user);
   React.useEffect(()=>{
@@ -42,10 +44,12 @@ function App() {
       <Route exact path="/login" component={LoginSignUp}/>
       <ProtectedRoute exact path="/account" component={Profile}/>
       <ProtectedRoute exact path="/me/update" component={UpdateProfile}/>
+
       <ProtectedRoute exact path="/password/update" component={UpdatePassword}/>
       <Route exact path="/password/forgot" component={ForgotPassword}/>
       <Route exact path="/password/reset/:token" component={ResetPassword}/>
       <Route exact path="/cart" component={Cart}/>
+
       <Footer/>
     </Router>
   )
