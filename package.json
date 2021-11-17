@@ -23,6 +23,7 @@
     "mongoose": "^6.0.10",
     "nodemailer": "^6.7.0",
     "nodemon": "^2.0.15",
+    "stripe": "^8.188.0",
     "validator": "^13.6.0"
   },
   "devDependencies": {
