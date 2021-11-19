@@ -3,6 +3,8 @@ const connectDatabase = require('./config/database');
 const dotenv = require('dotenv');
 const cloudinary= require("cloudinary");
 const port = 8000;
+
+//Config
 dotenv.config({ path: "./config/config.env" });
 
 
