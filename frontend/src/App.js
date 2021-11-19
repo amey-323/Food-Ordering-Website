@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'
 import Header from './components/layout/Header/Header.js'
 import Home from './components/Home/Home.js'
 import Footer from './components/layout/Footer/Footer.js'
@@ -26,6 +26,9 @@ import ConfirmOrder from './components/Cart/ConfirmOrder.js'
 import Payment from './components/Cart/Payment.js';
 import OrderSuccess from './components/Cart/OrderSuccess.js';
 import MyOrders from './components/Order/MyOrders.js';
+import OrderDetails from './components/Order/OrderDetails.js';
+import Dashboard from './components/Admin/Dashboard.js';
+import ProductList from './components/Admin/ProductList.js';
 import axios from 'axios'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
@@ -36,7 +39,7 @@ function App() {
     const { data } = await axios.get('/api/v1/stripeapikey')
     setStripeApiKey(data.stripeApiKey);
   }
-  React.useEffect(() => {
+  useEffect(() => {
     WebFont.load({
       google: {
         families: ['Roboto', 'Droid Sans', 'Chilanka'],
@@ -66,7 +69,6 @@ function App() {
       <Route exact path="/password/reset/:token" component={ResetPassword} />
       <Route exact path="/cart" component={Cart} />
       <ProtectedRoute exact path="/shipping" component={Shipping} />
-      <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
       {stripeApiKey && (
         <Elements stripe={loadStripe(stripeApiKey)}>
           <ProtectedRoute exact path="/process/payment" component={Payment} />
@@ -74,6 +76,12 @@ function App() {
       )}
       <ProtectedRoute exact path="/success" component={OrderSuccess}/>
       <ProtectedRoute exact path="/orders" component={MyOrders}/>
+      <Switch>
+      <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
+      <ProtectedRoute exact path="/order/:id" component={OrderDetails}/>
+      </Switch>
+      <ProtectedRoute isAdmin={true} exact path="/admin/dashboard" component={Dashboard}/>
+      <ProtectedRoute isAdmin={true} exact path="/admin/products" component={ProductList}/>
 
       <Footer />
     </Router>
