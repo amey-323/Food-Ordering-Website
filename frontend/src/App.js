@@ -29,6 +29,10 @@ import MyOrders from './components/Order/MyOrders.js';
 import OrderDetails from './components/Order/OrderDetails.js';
 import Dashboard from './components/Admin/Dashboard.js';
 import ProductList from './components/Admin/ProductList.js';
+import NewProduct from './components/Admin/NewProduct';
+import UpdateProduct from './components/Admin/UpdateProduct.js';
+import OrderList from './components/Admin/OrderList.js';
+import ProcessOrder from './components/Admin/ProcessOrder.js';
 import axios from 'axios'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
@@ -82,6 +86,10 @@ function App() {
       </Switch>
       <ProtectedRoute isAdmin={true} exact path="/admin/dashboard" component={Dashboard}/>
       <ProtectedRoute isAdmin={true} exact path="/admin/products" component={ProductList}/>
+      <ProtectedRoute isAdmin={true} exact path="/admin/product" component={NewProduct}/>
+      <ProtectedRoute isAdmin={true} exact path="/admin/product/:id" component={UpdateProduct}/>
+      <ProtectedRoute isAdmin={true} exact path="/admin/orders" component={OrderList}/>
+      <ProtectedRoute isAdmin={true} exact path="/admin/order/:id" component={ProcessOrder}/>
 
       <Footer />
     </Router>
