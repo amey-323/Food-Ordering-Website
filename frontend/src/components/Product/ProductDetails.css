@@ -146,15 +146,15 @@
   }
   
   .submitDialog {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
   }
   .submitDialogTextArea {
-    /* border: 1px solid rgba(0, 0, 0, 0.082);
+    border: 1px solid rgba(0, 0, 0, 0.082);
     margin: 1vmax 0;
     outline: none;
     padding: 1rem;
-    font: 300 1rem "Roboto"; */
+    font: 300 1rem "Roboto";
   }
   
   .reviewsHeading {
@@ -192,8 +192,8 @@
     font: 600 0.9vmax "Roboto";
   }
   .reviewCardComment {
-    /* color: rgba(0, 0, 0, 0.445);
-    font: 300 0.8vmax cursive; */
+    color: rgba(0, 0, 0, 0.445);
+    font: 300 0.8vmax cursive;
   }
   
   .noReviews {
@@ -284,7 +284,7 @@
       font: 600 3vw "Roboto";
     }
     .reviewCardComment {
-      /* font: 300 5vw cursive; */
+      font: 300 5vw cursive;
     }
   }
   
