@@ -1,50 +1,44 @@
-.paymentContainer {
+.paymentContainer{
     display: grid;
     place-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     height: 65vh;
     margin: 2vmax;
-  }
-  
-  .paymentForm {
+}
+.paymentForm{
     width: 22%;
     height: 100%;
-  }
-  
-  .paymentForm > p {
+}
+.paymentForm>p{
     font: 400 2vmax "Roboto";
-    color: rgba(0, 0, 0, 0.753);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
-    padding: 1vmax 0;
-    text-align: center;
-    width: 50%;
+    border-bottom: 1px solid rgba(0,0,0,0.13);
+    color: rgba(0,0,0,0.75);
     margin: auto;
-  }
-  
-  .paymentForm > div {
+    text-align: center;
+    padding: 1vmax 0;
+    width: 50%;
+}
+.paymentForm>div{
     display: flex;
     align-items: center;
     margin: 2vmax 0;
-  }
-  
-  .paymentInput {
+}
+.paymentInput{
     padding: 1vmax 4vmax;
     padding-right: 1vmax;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
     outline: none;
-  }
-  
-  .paymentForm > div > svg {
+    border: 1px solid rgba(0, 0, 0, 0.267);
+}
+.paymentForm>div>svg{
     position: absolute;
     transform: translateX(1vmax);
-    font-size: 1.6vmax;
+    font-size: 1vmax;
     color: rgba(0, 0, 0, 0.623);
-  }
-  
-  .paymentFormBtn {
+}
+.paymentFormBtn{
     border: none;
     background-color: tomato;
     color: white;
@@ -54,13 +48,12 @@
     cursor: pointer;
     transition: all 0.5s;
     outline: none;
-  }
-  
-  .paymentFormBtn:hover {
+}
+.paymentFormBtn:hover{
     background-color: rgb(179, 66, 46);
-  }
-  
-  @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
     .paymentForm {
       width: 90%;
     }

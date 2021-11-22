@@ -14,8 +14,8 @@ input[type="number"]{
   -moz-appearance: textfield;
 }
 .redColor{
-  color: red;
+  color: red !important;
 }
 .greenColor{
-  color: green;
+  color: green !important;
 }
