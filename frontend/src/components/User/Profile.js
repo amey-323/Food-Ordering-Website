@@ -45,9 +45,11 @@ const Profile = ({ history }) => {
             </div>
           </div>
         </Fragment>
+
       )}
     </Fragment>
   )
 }
+
 
 export default Profile

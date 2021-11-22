@@ -3,7 +3,9 @@ const connectDatabase = require('./config/database');
 const dotenv = require('dotenv');
 const cloudinary= require("cloudinary");
 const port = 8000;
-dotenv.config({ path: "backend/config/config.env" });
+
+//Config
+dotenv.config({ path: "./config/config.env" });
 
 
 // Handling uncaught Exception

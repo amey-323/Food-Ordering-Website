@@ -230,7 +230,7 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
     avg += rev.rating
   })
   let rating = 0
-  if (reviews.length == 0) {
+  if (reviews.length === 0) {
     rating = 0
   } else {
     rating = avg / reviews.length

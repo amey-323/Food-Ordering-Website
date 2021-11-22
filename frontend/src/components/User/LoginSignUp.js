@@ -42,7 +42,7 @@ const LoginSignUp = ({history, location}) => {
         myForm.set("avatar",avatar);
         dispatch(register(myForm));
 
-    }
+    };
     const registerDataChange=(e)=>{
         if(e.target.name==="avatar"){
             const reader=new FileReader();
@@ -56,7 +56,7 @@ const LoginSignUp = ({history, location}) => {
         }else{
             setUser({...user,[e.target.name]:e.target.value});
         }
-    }
+    };
     const redirect = location.search ? location.search.split("=")[1] : "/account";
     useEffect(()=>{
         if(error){
@@ -82,7 +82,9 @@ const LoginSignUp = ({history, location}) => {
             registerTab.current.classList.add('shiftToNeutralForm');
             loginTab.current.classList.add('shiftToLeft');
         }
-      }
+
+    };
+
     return (
         <Fragment>
       {loading ? (
