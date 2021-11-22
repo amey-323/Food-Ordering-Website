@@ -95,6 +95,7 @@ const Payment = ({ history }) => {
           }
 
           dispatch(createOrder(order));
+          localStorage.removeItem("cartItems");
 
           history.push('/success')
         } else {
@@ -112,7 +113,7 @@ const Payment = ({ history }) => {
       alert.error(error)
       dispatch(clearErrors())
     }
-  }, [dispatch, error, alert])
+  }, [dispatch, error, alert]);
   return (
     <Fragment>
       <MetaData title="Payment" />
