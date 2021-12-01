@@ -7,6 +7,8 @@
   
   .sidebar > a:first-child {
     padding: 0;
+    margin-left:5vmax ;
+    margin-top: 3vmax;
   }
   .sidebar > a > img {
     width: 100%;

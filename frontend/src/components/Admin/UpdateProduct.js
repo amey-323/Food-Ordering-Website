@@ -32,11 +32,14 @@ const UpdateProduct = ({ history, match }) => {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [Stock, setStock] = useState("");
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
-
+  const status=[
+    "Available",
+    "Not Available"
+  ];
   const categories = [
     "Laptop",
     "Footwear",
@@ -126,7 +129,7 @@ const UpdateProduct = ({ history, match }) => {
 
   return (
     <Fragment>
-      <MetaData title="Create Product" />
+      <MetaData title="Update Product" />
       <div className="dashboard">
         <SideBar />
         <div className="newProductContainer">
@@ -135,7 +138,7 @@ const UpdateProduct = ({ history, match }) => {
             encType="multipart/form-data"
             onSubmit={updateProductSubmitHandler}
           >
-            <h1>Create Product</h1>
+            <h1>Update Product</h1>
 
             <div>
               <SpellcheckIcon />
@@ -187,13 +190,21 @@ const UpdateProduct = ({ history, match }) => {
 
             <div>
               <StorageIcon />
-              <input
+              {/* <input
                 type="number"
                 placeholder="Stock"
                 required
                 onChange={(e) => setStock(e.target.value)}
                 value={Stock}
-              />
+              /> */}
+              <select onChange={(e) => setStock(e.target.value)}>
+                <option value="">Choose Status</option>
+                {status.map((stat) => (
+                  <option key={stat} value={stat}>
+                    {stat}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div id="createProductFormFile">
@@ -224,7 +235,7 @@ const UpdateProduct = ({ history, match }) => {
               type="submit"
               disabled={loading ? true : false}
             >
-              Create
+              Update
             </Button>
           </form>
         </div>

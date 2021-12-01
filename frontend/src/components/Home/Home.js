@@ -1,6 +1,5 @@
 import {React,useEffect} from 'react';
 import './Home.css';
-import {CgMouse} from 'react-icons/all';
 import ProductCard from './ProductCard';
 import MetaData from '../layout/MetaData';
 import Loader from '../layout/Loader/Loader';
@@ -31,16 +30,16 @@ const Home = () => {
                     <>
                         <MetaData title="FoodApp"/>
                         <div className='banner'>
-                            <p>Welcome to FoodApp</p>
-                            <h1>FIND AMAZING PRODUCTS BELOW</h1>
-                            <a href="#container">
+                            <p style={{fontSize:'3rem'}}>Welcome to FoodApp</p>
+                            <h1>FIND AMAZING FOOD ITEMS BELOW</h1>
+                            {/* <a href="#container">
                                 <button>
                                     Scroll <CgMouse/>
                                 </button>
-                            </a>
+                            </a> */}
                         </div>
-                        <h2 className='homeHeading'>Featured Products</h2>
-                        <div className='container' id='container'>
+                        <h2 className='homeHeading'>Food Items</h2>
+                        <div className='container' id=''>
                             {console.log(products)}
                             {products && products.map((product)=><ProductCard product={product}/>)}
                         </div>

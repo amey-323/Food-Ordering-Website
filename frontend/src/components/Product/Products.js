@@ -45,8 +45,8 @@ const Products = ({match}) => {
         <>
             {loading?(<Loader/>):(
                 <>
-                    <MetaData title={`Products -- FoodApp`}/>
-                    <h2 className='productsHeading'>Products</h2>
+                    <MetaData title={`Food Products`}/>
+                    <h2 className='productsHeading'>Food Products</h2>
                     <div className='products'>
                         {products && products.map((product)=>{
                             return <ProductCard product={product}/>
