@@ -11,6 +11,6 @@ const OrderSuccess = () => {
             <Link to="/orders">View Orders</Link>
         </div>
     )
-}
+};
 
-export default OrderSuccess
+export default OrderSuccess;

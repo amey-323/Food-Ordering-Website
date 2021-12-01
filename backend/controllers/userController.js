@@ -164,6 +164,7 @@ exports.updateProfile=catchAsyncErrors(async(req,res,next)=>{
             public_id: myCloud.public_id,
             url: myCloud.secure_url,
         }
+
     }
 
     const user=await User.findByIdAndUpdate(req.user.id,newUserData,{
@@ -205,15 +206,11 @@ exports.updateUserRole=catchAsyncErrors(async(req,res,next)=>{
         email:req.body.email,
         role:req.body.role
     };
-    const user = await User.findByIdAndUpdate(req.params.id,newUserData,{
+    await User.findByIdAndUpdate(req.params.id,newUserData,{
         new:true,
         validators:true,
         useFindAndModify:false
     });
-    if(!user){
-        return next(new ErrorHandler(`User with Id:${req.params.id} does not exist`,400));
-    }
-    await user.save();
     res.status(200).json({
         success:true,
         message:"Role Updated Successfully"
@@ -224,9 +221,14 @@ exports.updateUserRole=catchAsyncErrors(async(req,res,next)=>{
 exports.deleteUser=catchAsyncErrors(async(req,res,next)=>{
     
     const user = await User.findById(req.params.id);
+
     if(!user){
         return next(new ErrorHandler(`User with Id:${req.params.id} does not exist`,400));
     }
+    
+    const imageId=user.avatar.public_id;
+    await cloudinary.v2.uploader.destroy(imageId);
+
     await user.remove();
     res.status(200).json({
         success:true,
