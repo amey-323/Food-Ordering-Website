@@ -13,9 +13,9 @@ const Cart = ({ history}) => {
 
   const increaseQuantity = (id, quantity, stock) => {
     const newQty = quantity + 1;
-    if (stock <= quantity) {
-      return;
-    }
+    // if (stock <= quantity) {
+    //   return;
+    // }
     dispatch(addItemsToCart(id, newQty));
   };
 
@@ -71,7 +71,7 @@ const Cart = ({ history}) => {
                         increaseQuantity(
                           item.product,
                           item.quantity,
-                          item.stock
+                          // item.stock
                         )
                       }
                     >

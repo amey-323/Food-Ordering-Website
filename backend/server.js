@@ -5,7 +5,7 @@ const cloudinary= require("cloudinary");
 const port = 8000;
 
 //Config
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "backend/config/config.env" });
 
 
 // Handling uncaught Exception
