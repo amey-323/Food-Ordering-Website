@@ -9,5 +9,5 @@ const connectDatabase = () => {
         console.log(`MongoDB connected with server ${data.connection.host}`);
         })
 }
-
+//Modules
 module.exports = connectDatabase;
