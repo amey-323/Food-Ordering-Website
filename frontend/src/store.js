@@ -56,4 +56,3 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middleware)),
 )
 export default store
-

@@ -1,9 +1,11 @@
 .banner {
-    background-image: url("../../images/cover.jfif");
+    background-image: url("../../images/b3.png");
+    /* object-fit:fill; */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     height: 100vmin;
+    width: 100vw;
     color: white;
     display: flex;
     flex-direction: column;
@@ -38,7 +40,7 @@
     color: white;
   }
   
-  .banner::after {
+  /* .banner::after {
     content: "";
     width: 100vw;
     height: 100vmin;
@@ -48,7 +50,7 @@
     left: 0;
     clip-path: polygon(100% 68%, 0 100%, 100% 100%);
     max-width: 100%;
-  }
+  } */
   
   .homeHeading {
     text-align: center; 

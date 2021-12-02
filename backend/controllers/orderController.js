@@ -82,11 +82,11 @@ exports.updateOrder=catchAsyncErrors(async(req,res,next)=>{
     if(order.orderStatus==="Delivered"){
         return next(new ErrorHandler("This order has already been delivered",400));
     }
-    if(req.body.status==="Shipped"){
-        order.orderItems.forEach(async orderProduct=>{
-            await updateStock(orderProduct.product,orderProduct.quantity);
-        });
-    }
+    // if(req.body.status==="Shipped"){
+    //     order.orderItems.forEach(async orderProduct=>{
+    //         await updateStock(orderProduct.product,orderProduct.quantity);
+    //     });
+    // }
 
     order.orderStatus=req.body.status;
     if(req.body.status==="Delivered"){
@@ -97,11 +97,11 @@ exports.updateOrder=catchAsyncErrors(async(req,res,next)=>{
         success:true,
     })
 });
-async function updateStock(productId,qty){
-    const product=await Product.findById({_id:productId});
-    product.Stock-=qty;
-    await product.save({validateBeforeSave:false});
-}
+// async function updateStock(productId,qty){
+//     const product=await Product.findById({_id:productId});
+//     product.Stock-=qty;
+//     await product.save({validateBeforeSave:false});
+// }
 // delete Order -- Admin
 exports.deleteOrder=catchAsyncErrors(async(req,res,next)=>{
     const order=await Order.findById(req.params.id);

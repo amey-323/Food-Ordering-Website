@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   products &&
     products.forEach((item) => {
-      if (item.Stock === 0) {
+      if (item.Stock === "Not Available") {
         outOfStock += 1;
       }
     });
@@ -54,7 +54,7 @@ const Dashboard = () => {
   };
 
   const doughnutState = {
-    labels: ["Out of Stock", "InStock"],
+    labels: ["Not Available", "Available"],
     datasets: [
       {
         backgroundColor: ["#00A6B4", "#6800B4"],

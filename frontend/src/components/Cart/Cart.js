@@ -8,15 +8,15 @@ import { Typography } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
 
-const Cart = ({ history }) => {
+const Cart = ({ history}) => {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
 
   const increaseQuantity = (id, quantity, stock) => {
     const newQty = quantity + 1;
-    if (stock <= quantity) {
-      return;
-    }
+    // if (stock <= quantity) {
+    //   return;
+    // }
     dispatch(addItemsToCart(id, newQty));
   };
 
@@ -72,7 +72,7 @@ const Cart = ({ history }) => {
                         increaseQuantity(
                           item.product,
                           item.quantity,
-                          item.stock
+                          // item.stock
                         )
                       }
                     >

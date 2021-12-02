@@ -23,18 +23,15 @@ const NewProduct = ({ history }) => {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [Stock, setStock] = useState(0);
+  
+  const [Stock, setStock] = useState("");
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
+  const categories = ["Burger","Pizza","Biryani","Chinese","South Indian","North Indian","Cake & Desserts","Ice cream"];
+  const status=[
+    "Available",
+    "Not Available"
   ];
 
   useEffect(() => {
@@ -104,7 +101,7 @@ const NewProduct = ({ history }) => {
               <SpellcheckIcon />
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder="Food Item Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -146,12 +143,20 @@ const NewProduct = ({ history }) => {
 
             <div>
               <StorageIcon />
-              <input
+              {/* <input
                 type="number"
-                placeholder="Stock"
+                placeholder="Status"
                 required
                 onChange={(e) => setStock(e.target.value)}
-              />
+              /> */}
+              <select onChange={(e) => setStock(e.target.value)}>
+                <option value="">Choose Status</option>
+                {status.map((stat) => (
+                  <option key={stat} value={stat}>
+                    {stat}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div id="createProductFormFile">

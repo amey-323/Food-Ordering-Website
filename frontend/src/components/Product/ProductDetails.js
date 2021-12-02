@@ -30,7 +30,7 @@ const ProductDetails = ({ match }) => {
   const [comment, setComment] = useState("");
   
   const increaseQty = () => {
-    if (product.Stock <= quantity) return
+    if (product.Stock === "Not Available") return
     const qty = quantity + 1
     setQuantity(qty)
   }
@@ -118,7 +118,7 @@ const ProductDetails = ({ match }) => {
                     <button onClick={increaseQty}>+</button>
                   </div>
                   <button
-                    disabled={product.Stock < 1 ? true : false}
+                    disabled={product.Stock ==="Not Available" ? true : false}
                     onClick={addToCartHandler}
                   >
                     Add to Cart
@@ -126,8 +126,8 @@ const ProductDetails = ({ match }) => {
                 </div>
                 <p>
                   Status:
-                  <b className={product.Stock < 1 ? 'redColor' : 'greenColor'}>
-                    {product.Stock < 1 ? 'OutOfStock' : 'InStock'}
+                  <b className={product.Stock ==="Not Available"? 'redColor' : 'greenColor'}>
+                    {product.Stock ==="Not Available"? 'Not Avaliable' : 'Available'}
                   </b>
                 </p>
               </div>
