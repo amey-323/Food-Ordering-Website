@@ -28,15 +28,7 @@ const NewProduct = ({ history }) => {
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
+  const categories = ["Burger","Pizza","Biryani","Chinese","South Indian","North Indian","Cake & Desserts","Ice cream"];
   const status=[
     "Available",
     "Not Available"
@@ -109,7 +101,7 @@ const NewProduct = ({ history }) => {
               <SpellcheckIcon />
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder="Food Item Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}

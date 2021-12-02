@@ -6,12 +6,6 @@ import Loader from '../layout/Loader/Loader';
 import { getProduct,clearErrors } from '../../actions/productAction';
 import {useSelector,useDispatch} from 'react-redux';
 import {useAlert} from 'react-alert';
-// const product={
-//     name:"Sandwich",
-//     images:[{url:"http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg"}],
-//     price:"3000",
-//     _id:"Kunal"
-// };
 const Home = () => {
     const dispatch=useDispatch();
     const {loading,error,products}=useSelector((state)=>state.products);
