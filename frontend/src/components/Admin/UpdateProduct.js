@@ -40,15 +40,7 @@ const UpdateProduct = ({ history, match }) => {
     "Available",
     "Not Available"
   ];
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
+  const categories = ["Burger","Pizza","Biryani","Chinese","South Indian","North Indian","Cake & Desserts","Ice cream"];
 
   const productId = match.params.id;
 

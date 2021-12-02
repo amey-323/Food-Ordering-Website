@@ -9,7 +9,7 @@ import { useAlert } from 'react-alert';
 import Pagination from 'react-js-pagination';
 import Slider from "@material-ui/core/Slider";
 import Typography from '@material-ui/core/Typography';
-const categories=["Laptop","Footwear","Bottom","Tops","Attire","Camera","SmartPhones","Mobile"];
+const categories=["Burger","Pizza","Biryani","Chinese","South Indian","North Indian","Cake & Desserts","Ice cream"];
 const Products = ({match}) => {
     const dispatch=useDispatch();
     const [currentPage,setCurrentPage]=useState(1);
