@@ -16,19 +16,35 @@ import { useDispatch,useSelector } from "react-redux";
 const UserOptions=({ user })=>{
     const {cartItems}=useSelector((state)=>state.cart);
     const [open, setOpen]=useState(false);
-    const  options=[
-        {icon:<ListAltIcon />, name:"Orders", func: orders},
-        {icon:<PersonIcon />, name:"Profile", func: account},
-        {icon:<ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}}/>, name:`Cart${cartItems.length}`, func: cart},
-        {icon:<ExitToAppIcon />, name:"Logout", func: logoutUser},
-    ]
+    // const  options=[
+    //     {icon:<ListAltIcon />, name:"Orders", func: orders},
+    //     {icon:<PersonIcon />, name:"Profile", func: account},
+    //     {icon:<ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}}/>, name:`Cart${cartItems.length}`, func: cart},
+    //     {icon:<ExitToAppIcon />, name:"Logout", func: logoutUser},
+    // ]
     const history= useHistory();
     const dispatch = useDispatch();
     const alert= useAlert();
-    if(user.role==='admin'){
-        options.unshift(
-            {icon:<DashboardIcon />, name:"Dashboard", func: dashboard}
-        );
+    var options;
+    if(user.role==="user"){
+          options=[
+            {icon:<ListAltIcon />, name:"Orders", func: orders},
+            {icon:<PersonIcon />, name:"Profile", func: account},
+            {icon:<ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}}/>, name:`Cart${cartItems.length}`, func: cart},
+            {icon:<ExitToAppIcon />, name:"Logout", func: logoutUser},
+        ]
+    }
+    else if(user.role==='admin'){
+          options=[
+            {icon:<DashboardIcon />, name:"Dashboard", func: dashboard},
+            // {icon:<ListAltIcon />, name:"Orders", func: orders},
+            {icon:<PersonIcon />, name:"Profile", func: account},
+            // {icon:<ShoppingCartIcon style={{color:cartItems.length>0?"tomato":"unset"}}/>, name:`Cart${cartItems.length}`, func: cart},
+            {icon:<ExitToAppIcon />, name:"Logout", func: logoutUser},
+        ]
+        // options.unshift(
+        //     {icon:<DashboardIcon />, name:"Dashboard", func: dashboard}
+        // );
     }
     function dashboard(){
         history.push('/admin/dashboard');

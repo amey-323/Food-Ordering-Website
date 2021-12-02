@@ -20,6 +20,7 @@ import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch()
   const alert = useAlert()
+  // const {user,}=useSelector((state)=>state.user);
   const { loading, error, product } = useSelector(
     (state) => state.productDetails,
   )
@@ -111,7 +112,7 @@ const ProductDetails = ({ match }) => {
               </div>
               <div className="detailsBlock-3">
                 <h2>{`Rs${product.price}`}</h2>
-                <div className="detailsBlock-3-1">
+               <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreaseQty}>-</button>
                     <input readOnly type="number" value={quantity} />
@@ -124,6 +125,7 @@ const ProductDetails = ({ match }) => {
                     Add to Cart
                   </button>
                 </div>
+                
                 <p>
                   Status:
                   <b className={product.Stock ==="Not Available"? 'redColor' : 'greenColor'}>
