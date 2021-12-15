@@ -17,10 +17,10 @@ import {
 } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import { NEW_REVIEW_RESET } from '../../constants/productConstants'
-const ProductDetails = ({ match }) => {
+const ProductDetails = ({ match, history }) => {
   const dispatch = useDispatch()
   const alert = useAlert()
-  // const {user,}=useSelector((state)=>state.user);
+  const { isAuthenticated}=useSelector((state)=>state.user);
   const { loading, error, product } = useSelector(
     (state) => state.productDetails,
   )
@@ -42,19 +42,27 @@ const ProductDetails = ({ match }) => {
   }
 
   const addToCartHandler = () => {
+    if(isAuthenticated){
     dispatch(addItemsToCart(match.params.id, quantity))
     alert.success('Item added to cart')
+    }else{
+      history.push("/login");
+    }
   }
   const submitReviewToggle=()=>{
       open?setOpen(false):setOpen(true);
   }
   const reviewSubmitHandler=()=>{
+    if(isAuthenticated){
       const myForm=new FormData();
       myForm.set("rating",rating);
       myForm.set("comment",comment);
       myForm.set("productId",match.params.id);
       dispatch(newReview(myForm));
       setOpen(false)
+    }else{
+      history.push("/login");
+    }
   }
   useEffect(() => {
     if (error) {
@@ -70,7 +78,7 @@ const ProductDetails = ({ match }) => {
       dispatch({type:NEW_REVIEW_RESET});
     }
     dispatch(getProductDetails(match.params.id))
-  }, [dispatch, match.params.id, alert, error,success,reviewError])
+  }, [dispatch, match.params.id, alert, error,success,reviewError,isAuthenticated])
   const options = {
     size: "large",
     value: product.rating,
