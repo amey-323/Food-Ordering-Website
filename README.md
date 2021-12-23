@@ -5,7 +5,7 @@ A website where user can buy food products from a specific hotel to which the we
 2. Run the command ‘npm i’ after going to the main main project directory to install all node modules.
 3. Go to the frontend directory and run the ‘npm i’ command to install all node modules required for frontend.
 4. Create two terminals.On one terminal go to frontend directory and run command ‘npm start’ to start the frontend and on other terminal go to backend directory and run command ‘node server.js’ to run the backend of the project.
-Technologies Used:
+### Technologies Used:
 1.	We have a MERN architecture for developing a website.
 2.	MongoDB is used as a cloud database for the website.
 3.	App level state management is done by making use of redux which reduces complexity of state management.
