@@ -13,6 +13,8 @@ Technologies Used:
 5.	For authentication, we have made use of jwt tokens which expire after a certain time.
 6.	We have used stripe api for payment .
 
+
+
 ### Features:
 #### Registered User: 
 1.	User can explore different products. He/She can apply different filters category.
