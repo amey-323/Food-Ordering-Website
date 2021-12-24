@@ -13,6 +13,7 @@ A website where user can buy food products from a specific hotel to which the we
 4.	Cloudinary is used for storing the images. Eg: When image is uploaded by a user as a profile picture or storing food product images etc.
 5.	For authentication, we have made use of jwt tokens which expire after a certain time.
 6.	We have used stripe api for payment .
+7.	We have used send grid api for sending mail to the user.
 
 ### Features:
 #### Registered User: 
