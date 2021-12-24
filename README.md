@@ -1,7 +1,7 @@
 # Food-Ordering-Website
-A website where user can buy food products from a specific hotel to which the website belongs to.
-College: K.J.Somaiya College of Engineering, Mumbai
-Class TY COMPS B
+A website where user can buy food products from a specific hotel to which the website belongs to. <br/>
+ College: K.J.Somaiya College of Engineering, Mumbai <br/>
+ Class TY COMPS B
 ### Contributors:
 - Amey Gangan
 - Kunal Maniyar
