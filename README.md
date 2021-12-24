@@ -1,5 +1,12 @@
 # Food-Ordering-Website
 A website where user can buy food products from a specific hotel to which the website belongs to.
+College: K.J.Somaiya College of Engineering, Mumbai
+Class TY COMPS B
+### Contributors:
+- Amey Gangan
+- Kunal Maniyar
+- Jayadeep More
+
 ### Installation:
 1. Fork the repository.
 2. Run the command ‘npm i’ after going to the main main project directory to install all node modules.
@@ -89,8 +96,5 @@ He will able to browse all items. But he will have to register to buy any produc
 
 
 
-### Contributors:
-- Amey Gangan
-- Kunal Maniyar
-- Jayadeep More
+
 
