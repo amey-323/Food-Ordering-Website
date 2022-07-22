@@ -3,15 +3,18 @@ A website where user can buy food products from a specific hotel to which the we
  College: K.J.Somaiya College of Engineering, Mumbai <br/>
  Class TY COMPS B
 ### Contributors:
-- Amey Gangan
-- Kunal Maniyar
-- Jayadeep More
+- [Amey Gangan](https://github.com/amey-323)
+- [Kunal Maniyar](https://github.com/KunalManiyar)
+- [Jayadeep More](https://github.com/Jayadeep01)
+
+### Simulation:
+https://user-images.githubusercontent.com/62855667/180479249-1f43a09c-39ea-42f6-9ee4-ae70a208a9ce.mp4
 
 ### Installation:
-1. Fork the repository.
-2. Run the command ‘npm i’ after going to the main main project directory to install all node modules.
-3. Go to the frontend directory and run the ‘npm i’ command to install all node modules required for frontend.
-4. Create two terminals.On one terminal go to frontend directory and run command ‘npm start’ to start the frontend and on other terminal go to backend directory and run command ‘node server.js’ to run the backend of the project.
+1. Clone the repository.
+2. Run the command ```npm i``` after going to the main main project directory to install all node modules.
+3. Go to the frontend directory and run the ```npm i``` command to install all node modules required for frontend.
+4. Create two terminals.On one terminal go to frontend directory and run command ```npm start``` to start the frontend and on other terminal go to backend directory and run command ```node server.js``` to run the backend of the project.
 
 ### Technologies Used:
 1.	We have a MERN architecture for developing a website.
